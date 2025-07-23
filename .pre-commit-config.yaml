@@ -1,0 +1,88 @@
+repos:
+  # Terraform formatting
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.88.0
+    hooks:
+      - id: terraform_fmt
+        args:
+          - --args=-no-color
+          - --args=-diff
+          - --args=-write=true
+      - id: terraform_validate
+      - id: terraform_docs
+        args:
+          - --args=-sort-by-required
+          - --args=-sort-by-name
+      - id: terraform_tflint
+        args:
+          - --args=--disable-rule=terraform_deprecated_index
+          - --args=--disable-rule=terraform_unused_declarations
+      - id: terraform_checkov
+        args:
+          - --args=--skip-check=CKV_AWS_130
+          - --args=--skip-check=CKV_AWS_126
+      - id: terraform_tfsec
+        args:
+          - --args=--format=json
+          - --args=--out=tfsec.json
+      - id: terraform_tfsec
+        args:
+          - --args=--format=sarif
+          - --args=--out=tfsec.sarif
+
+  # General code quality
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  # YAML formatting
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        types: [yaml]
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.38.0
+    hooks:
+      - id: markdownlint
+        args:
+          - --fix
+          - --config=.markdownlint.yaml
+
+  # Security scanning
+  - repo: https://github.com/aquasecurity/tfsec
+    rev: v1.28.4
+    hooks:
+      - id: tfsec
+        args:
+          - --format=sarif
+          - --out=tfsec.sarif
+          - --soft-fail
+
+  # Terraform security with checkov
+  - repo: https://github.com/bridgecrewio/checkov
+    rev: 3.1.0
+    hooks:
+      - id: checkov
+        args:
+          - --framework=terraform
+          - --output=sarif
+          - --output-file-path=checkov.sarif
+          - --soft-fail 

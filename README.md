@@ -68,6 +68,43 @@ Common security checks include:
 - Resource access controls
 - Compliance with security standards
 
+### Pre-commit Hooks
+
+Local development is enhanced with pre-commit hooks that run before each commit:
+
+#### Setup
+```bash
+# Run the setup script
+./scripts/setup-pre-commit.sh
+
+# Or install manually
+pip install pre-commit
+pre-commit install
+```
+
+#### Available Hooks
+- **Terraform Formatting**: `terraform fmt` on all `.tf` files
+- **Terraform Validation**: Syntax and configuration validation
+- **Documentation Generation**: Auto-generate module documentation
+- **Security Scanning**: tfsec and Checkov security checks
+- **Code Quality**: General linting and formatting
+- **Markdown Linting**: Documentation formatting
+
+#### Usage
+```bash
+# Run all hooks on staged files (automatic on commit)
+pre-commit run
+
+# Run on all files
+pre-commit run --all-files
+
+# Run specific hook
+pre-commit run terraform_fmt
+
+# Skip hooks (not recommended)
+git commit --no-verify
+```
+
 ## Semantic Versioning
 
 This repository uses semantic versioning for automated releases. See [SEMANTIC_VERSIONING.md](SEMANTIC_VERSIONING.md) for detailed information.
