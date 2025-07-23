@@ -10,11 +10,48 @@ permissions:
   pull-requests: write # Required to comment on pull request
 
 jobs:
-  release:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.5.0"
+
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
+
+      - name: Terraform Init
+        run: |
+          find . -name "*.tf" -exec dirname {} \; | sort -u | while read dir; do
+            if [ -f "$dir/main.tf" ] || [ -f "$dir/variables.tf" ]; then
+              echo "Initializing $dir"
+              terraform -chdir="$dir" init -backend=false
+            fi
+          done
+
+      - name: Terraform Validate
+        run: |
+          find . -name "*.tf" -exec dirname {} \; | sort -u | while read dir; do
+            if [ -f "$dir/main.tf" ] || [ -f "$dir/variables.tf" ]; then
+              echo "Validating $dir"
+              terraform -chdir="$dir" validate
+            fi
+          done
+
+  release:
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required for semantic versioning
+
       - name: Terraform Module Releaser
         uses: techpivot/terraform-module-releaser@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -51,11 +51,31 @@ module "example" {
 - Use consistent variable naming
 - Include proper validation rules
 
+## Semantic Versioning
+
+This repository uses semantic versioning for automated releases. See [SEMANTIC_VERSIONING.md](SEMANTIC_VERSIONING.md) for detailed information.
+
+### Quick Start
+
+1. Use conventional commit messages (see `.gitmessage` template)
+2. Create pull requests to main branch
+3. Automatic releases are created on merge
+
+### Commit Message Format
+
+```
+<type>(<scope>): <subject>
+
+feat(aws-vpc): add support for custom CIDR blocks
+fix(azure-storage): resolve naming conflict
+docs: update README with examples
+```
+
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
+3. Make your changes using conventional commits
 4. Test thoroughly
 5. Submit a pull request
 

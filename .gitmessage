@@ -1,0 +1,43 @@
+# <type>(<scope>): <subject>
+#
+# <body>
+#
+# <footer>
+
+# Types:
+#   feat     (new feature for the user, not a new feature for build script)
+#   fix      (bug fix for the user, not a fix to a build script)
+#   docs     (changes to the documentation)
+#   style    (formatting, missing semi colons, etc; no production code change)
+#   refactor (refactoring production code, eg. renaming a variable)
+#   test     (adding missing tests, refactoring tests; no production code change)
+#   chore    (updating grunt tasks etc; no production code change)
+#   perf     (performance improvements)
+#   ci       (changes to CI configuration files and scripts)
+#   build    (changes that affect the build system or external dependencies)
+#   revert   (revert to a previous commit)
+#
+# Scopes:
+#   module-name (specific module affected)
+#   * (wildcard for any scope)
+#
+# Examples:
+#   feat(aws-vpc): add support for custom CIDR blocks
+#   fix(azure-storage): resolve issue with storage account naming
+#   docs: update README with new module examples
+#   style: format terraform files
+#   refactor(common): extract shared variables to common module
+#   test(aws-ec2): add unit tests for instance configuration
+#   chore: update terraform version to 1.5.0
+#   perf(aws-lambda): optimize cold start times
+#   ci: add terraform validation workflow
+#   build: update provider versions
+#   revert: revert to previous working version
+#
+# Breaking Changes:
+#   Use ! after type/scope to indicate breaking change
+#   Example: feat(aws-vpc)!: change default CIDR block
+#
+# Footer:
+#   - Breaking changes should start with "BREAKING CHANGE: "
+#   - Issues should be referenced with "Closes #123" or "Fixes #123" 
