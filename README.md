@@ -50,6 +50,23 @@ module "example" {
 - Provide examples in the README
 - Use consistent variable naming
 - Include proper validation rules
+- Follow security best practices (tfsec compliance)
+
+### Security Scanning
+
+This repository uses tfsec for automated security scanning:
+
+- **Automated Checks**: Runs on every PR and push to main
+- **Security Issues**: Identifies potential security vulnerabilities
+- **Compliance**: Ensures AWS/Azure/GCP security best practices
+- **Configuration**: Customizable via `.tfsec.yml`
+
+Common security checks include:
+- Encryption at rest and in transit
+- IAM permissions and policies
+- Network security groups and firewalls
+- Resource access controls
+- Compliance with security standards
 
 ## Semantic Versioning
 
