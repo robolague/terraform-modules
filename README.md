@@ -1,5 +1,7 @@
 # Terraform Modules
 
+[![Terraform Module Releaser](https://github.com/robolague/terraform-modules/workflows/Terraform%20Module%20Releaser/badge.svg)](https://github.com/robolague/terraform-modules/actions)
+
 This repository contains reusable Terraform modules for infrastructure management.
 
 ## Structure
