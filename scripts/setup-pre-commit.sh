@@ -53,29 +53,7 @@ if ! command -v tfsec &> /dev/null; then
     fi
 fi
 
-# Check if tflint is installed
-if ! command -v tflint &> /dev/null; then
-    echo "📦 Installing tflint..."
-    if command -v brew &> /dev/null; then
-        brew install tflint
-    else
-        echo "⚠️  Warning: Could not install tflint automatically."
-        echo "   Please install it manually: https://github.com/terraform-linters/tflint"
-    fi
-fi
 
-# Check if checkov is installed
-if ! command -v checkov &> /dev/null; then
-    echo "📦 Installing checkov..."
-    if command -v pip &> /dev/null; then
-        pip install checkov
-    elif command -v pip3 &> /dev/null; then
-        pip3 install checkov
-    else
-        echo "⚠️  Warning: Could not install checkov automatically."
-        echo "   Please install it manually: https://www.checkov.io/"
-    fi
-fi
 
 # Check if terraform-docs is installed
 if ! command -v terraform-docs &> /dev/null; then
@@ -98,11 +76,9 @@ echo "📋 Available hooks:"
 echo "   - terraform_fmt: Format Terraform files"
 echo "   - terraform_validate: Validate Terraform syntax"
 echo "   - terraform_docs: Generate documentation"
-echo "   - terraform_tflint: Lint Terraform code"
-echo "   - terraform_checkov: Security scanning with Checkov"
-echo "   - terraform_tfsec: Security scanning with tfsec"
-echo "   - General code quality checks"
-echo "   - YAML/JSON formatting"
+echo "   - tfsec: Security scanning with tfsec"
+echo "   - General code quality checks (whitespace, file endings, etc.)"
+echo "   - YAML formatting with prettier"
 echo "   - Markdown linting"
 echo ""
 echo "📚 Documentation generation:"
