@@ -90,10 +90,8 @@ docs: update module usage examples
 
 ## Configuration Files
 
-* `.releaserc`: Semantic release configuration
-* `package.json`: Node.js package with release settings
 * `.gitmessage`: Git commit message template
-* `.github/workflows/semantic-release.yml`: GitHub Actions workflow
+* `.github/workflows/semantic-release.yml`: GitHub Actions workflow (pure bash)
 
 ## Setting Up Git Template
 
@@ -105,10 +103,10 @@ git config commit.template .gitmessage
 
 ## Manual Release
 
-If you need to create a manual release:
+If you need to create a manual release, you can trigger the GitHub Actions workflow manually or use the GitHub CLI:
 
 ```bash
-npm run semantic-release
+gh workflow run semantic-release.yml
 ```
 
 ## Troubleshooting
@@ -121,11 +119,7 @@ npm run semantic-release
 
 ### Debug Mode
 
-Enable debug mode for semantic-release:
-
-```bash
-DEBUG=semantic-release:* npx semantic-release
-```
+The GitHub Actions workflow includes detailed logging. You can view the workflow logs in the GitHub Actions tab to debug any issues.
 
 ## Best Practices
 

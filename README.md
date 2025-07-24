@@ -97,7 +97,7 @@ This repository uses automated semantic versioning:
 
 ### Module Standards
 
-* ✅ **Semantic Versioning**: Automatic releases based on commit messages
+* ✅ **Semantic Versioning**: Pure GitHub Actions-based automated releases
 * ✅ **Auto-Documentation**: README files generated automatically
 * ✅ **Security Scanning**: tfsec and Checkov integration
 * ✅ **Code Quality**: Pre-commit hooks for formatting and validation
