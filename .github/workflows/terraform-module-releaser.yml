@@ -4,6 +4,9 @@ on:
     types: [opened, reopened, synchronize, closed] # Closed required
     branches:
       - main
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write # Required for to push tags, create release, and push changes to the wiki
