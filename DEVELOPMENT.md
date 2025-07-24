@@ -73,9 +73,22 @@ pre-commit run --all-files
 pre-commit run terraform_fmt
 pre-commit run terraform_validate
 pre-commit run terraform_tfsec
+pre-commit run terraform_docs
 ```
 
-### 4. Commit Changes
+### 4. Documentation Generation
+
+Generate comprehensive documentation for all modules:
+
+```bash
+# Generate docs for all modules
+./scripts/generate-docs.sh
+
+# Or run via pre-commit
+pre-commit run terraform_docs
+```
+
+### 5. Commit Changes
 
 ```bash
 # Use conventional commit format
@@ -85,7 +98,7 @@ git commit -m "feat(aws-vpc): add support for custom CIDR blocks"
 git commit
 ```
 
-### 5. Push and Create PR
+### 6. Push and Create PR
 
 ```bash
 git push origin feature/your-module-name

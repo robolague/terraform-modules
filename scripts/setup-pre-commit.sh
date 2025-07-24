@@ -77,6 +77,17 @@ if ! command -v checkov &> /dev/null; then
     fi
 fi
 
+# Check if terraform-docs is installed
+if ! command -v terraform-docs &> /dev/null; then
+    echo "📦 Installing terraform-docs..."
+    if command -v brew &> /dev/null; then
+        brew install terraform-docs
+    else
+        echo "⚠️  Warning: Could not install terraform-docs automatically."
+        echo "   Please install it manually: https://terraform-docs.io/user-guide/installation/"
+    fi
+fi
+
 # Run pre-commit on all files to ensure everything is set up
 echo "🔍 Running pre-commit on all files..."
 pre-commit run --all-files
@@ -93,6 +104,9 @@ echo "   - terraform_tfsec: Security scanning with tfsec"
 echo "   - General code quality checks"
 echo "   - YAML/JSON formatting"
 echo "   - Markdown linting"
+echo ""
+echo "📚 Documentation generation:"
+echo "   - ./scripts/generate-docs.sh: Generate docs for all modules"
 echo ""
 echo "💡 Usage:"
 echo "   - Hooks run automatically on commit"
