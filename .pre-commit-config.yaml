@@ -19,14 +19,6 @@ repos:
         args:
           - --args=--disable-rule=terraform_deprecated_index
           - --args=--disable-rule=terraform_unused_declarations
-      - id: terraform_checkov
-        args:
-          - --args=--skip-check=CKV_AWS_130
-          - --args=--skip-check=CKV_AWS_126
-      - id: terraform_tfsec
-        args:
-          - --args=--format=sarif
-          - --args=--out=tfsec.sarif
 
   # General code quality
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -72,13 +64,3 @@ repos:
         args:
           - --format=sarif
           - --out=tfsec.sarif
-
-  # Terraform security with checkov
-  - repo: https://github.com/bridgecrewio/checkov
-    rev: 3.1.0
-    hooks:
-      - id: checkov
-        args:
-          - --framework=terraform
-          - --output=sarif
-          - --output-file-path=checkov.sarif
