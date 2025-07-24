@@ -15,7 +15,7 @@ repos:
           - --args=--output-file=README.md
           - --args=--output-mode=inject
           - --args=--hide-empty
-
+      - id: terraform_tflint
   # General code quality
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
