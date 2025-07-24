@@ -25,10 +25,6 @@ repos:
           - --args=--skip-check=CKV_AWS_126
       - id: terraform_tfsec
         args:
-          - --args=--format=json
-          - --args=--out=tfsec.json
-      - id: terraform_tfsec
-        args:
           - --args=--format=sarif
           - --args=--out=tfsec.sarif
 
@@ -76,7 +72,6 @@ repos:
         args:
           - --format=sarif
           - --out=tfsec.sarif
-          - --soft-fail
 
   # Terraform security with checkov
   - repo: https://github.com/bridgecrewio/checkov
@@ -87,4 +82,3 @@ repos:
           - --framework=terraform
           - --output=sarif
           - --output-file-path=checkov.sarif
-          - --soft-fail 
