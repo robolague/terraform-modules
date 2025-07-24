@@ -91,7 +91,7 @@ docs: update module usage examples
 ## Configuration Files
 
 * `.gitmessage`: Git commit message template
-* `.github/workflows/semantic-release.yml`: GitHub Actions workflow (pure bash)
+* `.github/workflows/terraform-module-releaser.yml`: GitHub Actions workflow using techpivot/terraform-module-releaser
 
 ## Setting Up Git Template
 
@@ -106,7 +106,7 @@ git config commit.template .gitmessage
 If you need to create a manual release, you can trigger the GitHub Actions workflow manually or use the GitHub CLI:
 
 ```bash
-gh workflow run semantic-release.yml
+gh workflow run terraform-module-releaser.yml
 ```
 
 ## Troubleshooting

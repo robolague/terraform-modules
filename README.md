@@ -97,7 +97,7 @@ This repository uses automated semantic versioning:
 
 ### Module Standards
 
-* ✅ **Semantic Versioning**: Pure GitHub Actions-based automated releases
+* ✅ **Semantic Versioning**: Automated releases using techpivot/terraform-module-releaser
 * ✅ **Auto-Documentation**: README files generated automatically
 * ✅ **Security Scanning**: tfsec and Checkov integration
 * ✅ **Code Quality**: Pre-commit hooks for formatting and validation

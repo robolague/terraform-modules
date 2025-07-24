@@ -59,5 +59,16 @@ jobs:
 
       - name: Terraform Module Releaser
         uses: techpivot/terraform-module-releaser@v1
+        with:
+          major-keywords: "major update,breaking change"
+          minor-keywords: "feat,feature"
+          patch-keywords: "fix,chore,docs"
+          default-first-tag: "v1.0.0"
+          terraform-docs-version: "v0.19.0"
+          delete-legacy-tags: true
+          disable-wiki: false
+          wiki-sidebar-changelog-max: 10
+          module-change-exclude-patterns: ".gitignore,*.md,docs/**,examples/**,*.tftest.hcl,tests/**"
+          module-asset-exclude-patterns: ".gitignore,*.md,*.tftest.hcl,tests/**"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
