@@ -7,7 +7,7 @@ This repository contains reusable Terraform modules for infrastructure managemen
 ```
 terraform-modules/
 ├── modules/          # Reusable Terraform modules
-│   ├── aws-vpc/     # AWS VPC module
+│   ├── aws-vpc/     # AWS VPC module (example)
 │   └── ...          # Additional modules
 ├── templates/        # Documentation templates
 ├── scripts/          # Development and automation scripts

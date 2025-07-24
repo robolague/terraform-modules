@@ -14,6 +14,9 @@ module "vpc" {
   name       = "example-vpc"
   cidr_block = "10.0.0.0/16"
 
+  # VPC Flow Logs are enabled by default
+  enable_flow_logs = true
+
   tags = {
     Environment = "example"
     Project     = "terraform-modules"
