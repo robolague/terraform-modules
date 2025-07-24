@@ -1,6 +1,7 @@
 # Terraform Modules
 
 [![Terraform Module Releaser](https://github.com/robolague/terraform-modules/workflows/Terraform%20Module%20Releaser/badge.svg)](https://github.com/robolague/terraform-modules/actions)
+[![CodeQL](https://github.com/robolague/terraform-modules/workflows/CodeQL/badge.svg)](https://github.com/robolague/terraform-modules/actions)
 
 This repository contains reusable Terraform modules for infrastructure management.
 
@@ -101,7 +102,7 @@ This repository uses automated semantic versioning:
 
 * ✅ **Semantic Versioning**: Automated releases using techpivot/terraform-module-releaser
 * ✅ **Auto-Documentation**: README files generated automatically
-* ✅ **Security Scanning**: tfsec and Checkov integration
+* ✅ **Security Scanning**: tfsec and CodeQL analysis
 * ✅ **Code Quality**: Pre-commit hooks for formatting and validation
 * ✅ **Examples**: Comprehensive usage examples
 * ✅ **Validation**: Input validation and error handling
