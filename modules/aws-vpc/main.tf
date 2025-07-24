@@ -1,3 +1,7 @@
+# AWS VPC Module with Flow Logs and KMS Encryption
+# This module creates a VPC with optional Internet Gateway, VPC Flow Logs,
+# and KMS encryption for enhanced security monitoring and compliance.
+
 terraform {
   required_version = ">= 1.0"
   required_providers {
