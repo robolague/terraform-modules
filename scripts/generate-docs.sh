@@ -41,7 +41,6 @@ for module in $modules; do
             --output-file="$module/README.md" \
             --output-mode=replace \
             --hide-empty \
-            --header-from="../../templates/README.md" \
             "$module"
         
         echo "✅ Generated README.md for $module"
@@ -56,7 +55,6 @@ if [ -f "main.tf" ] || [ -f "variables.tf" ]; then
         --output-file="README.md" \
         --output-mode=replace \
         --hide-empty \
-        --header-from="templates/README.md" \
         .
     
     echo "✅ Generated main README.md"

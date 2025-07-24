@@ -4,7 +4,6 @@
 {{.Description}}
 {{end}}
 
-{{if .Requirements}}
 ## Requirements
 
 | Name | Version |
@@ -12,9 +11,7 @@
 {{- range .Requirements}}
 | {{.Name}} | {{.Version}} |
 {{- end}}
-{{end}}
 
-{{if .Providers}}
 ## Providers
 
 | Name | Version |
@@ -22,19 +19,7 @@
 {{- range .Providers}}
 | {{.Name}} | {{.Version}} |
 {{- end}}
-{{end}}
 
-{{if .Modules}}
-## Modules
-
-| Name | Source | Version |
-|------|--------|---------|
-{{- range .Modules}}
-| {{.Name}} | {{.Source}} | {{.Version}} |
-{{- end}}
-{{end}}
-
-{{if .Resources}}
 ## Resources
 
 | Name | Type |
@@ -42,19 +27,15 @@
 {{- range .Resources}}
 | {{.Name}} | {{.Type}} |
 {{- end}}
-{{end}}
 
-{{if .Inputs}}
 ## Inputs
 
-| Name | Description | Type | {{if .Inputs.Required}}Required{{else}}Optional{{end}} | Default |
+| Name | Description | Type | Required | Default |
 |------|-------------|------|:--------:|:--------:|
 {{- range .Inputs}}
 | {{.Name}} | {{.Description}} | {{.Type}} | {{if .Required}}yes{{else}}no{{end}} | {{.Default}} |
 {{- end}}
-{{end}}
 
-{{if .Outputs}}
 ## Outputs
 
 | Name | Description |
@@ -62,7 +43,6 @@
 {{- range .Outputs}}
 | {{.Name}} | {{.Description}} |
 {{- end}}
-{{end}}
 
 ## Usage
 

@@ -15,7 +15,6 @@ repos:
           - --args=--output-file=README.md
           - --args=--output-mode=replace
           - --args=--hide-empty
-          - --args=--header-from=templates/README.md
       - id: terraform_tflint
         args:
           - --args=--disable-rule=terraform_deprecated_index
