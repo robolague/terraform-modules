@@ -164,23 +164,63 @@ git commit --no-verify
 
 ## Semantic Versioning
 
-This repository uses semantic versioning for automated releases. See [SEMANTIC_VERSIONING.md](SEMANTIC_VERSIONING.md) for detailed information.
+This repository uses automated semantic versioning based on conventional commit messages. The [techpivot/terraform-module-releaser](https://github.com/techpivot/terraform-module-releaser) action handles versioning automatically.
+
+### Commit Message Format
+
+All commits should follow the conventional commit format:
+
+```
+<type>(<scope>): <subject>
+```
+
+### Commit Types
+
+* **feat**: New features (triggers minor version bump)
+* **fix**: Bug fixes (triggers patch version bump)
+* **docs**: Documentation changes (no version bump)
+* **style**: Code style changes (no version bump)
+* **refactor**: Code refactoring (no version bump)
+* **test**: Adding or updating tests (no version bump)
+* **chore**: Maintenance tasks (no version bump)
+* **perf**: Performance improvements (triggers patch version bump)
+
+### Breaking Changes
+
+To indicate a breaking change, add `!` after the type/scope:
+
+```
+feat(aws-vpc)!: change default CIDR block
+```
+
+### Examples
+
+```
+feat(aws-vpc): add support for custom CIDR blocks
+fix(azure-storage): resolve storage account naming conflict
+docs: update module usage examples
+feat(aws-ec2)!: change default instance type
+```
+
+### Version Bumping Rules
+
+* **MAJOR** (1.0.0): Breaking changes
+* **MINOR** (1.1.0): New features (backward compatible)
+* **PATCH** (1.1.1): Bug fixes (backward compatible)
+
+### Git Template Setup
+
+To use the commit message template:
+
+```bash
+git config commit.template .gitmessage
+```
 
 ### Quick Start
 
 1. Use conventional commit messages (see `.gitmessage` template)
 2. Create pull requests to main branch
 3. Automatic releases are created on merge
-
-### Commit Message Format
-
-```
-<type>(<scope>): <subject>
-
-feat(aws-vpc): add support for custom CIDR blocks
-fix(azure-storage): resolve naming conflict
-docs: update README with examples
-```
 
 ## Contributing
 

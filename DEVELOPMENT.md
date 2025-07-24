@@ -56,7 +56,7 @@ git checkout -b feature/your-module-name
 
 Follow these guidelines:
 
-* **Use conventional commits**: See [SEMANTIC_VERSIONING.md](SEMANTIC_VERSIONING.md)
+* **Use conventional commits**: See the [Semantic Versioning](#semantic-versioning) section in README.md
 * **Follow module structure**: See module standards below
 * **Write documentation**: Include README.md for each module
 * **Test locally**: Validate your Terraform code
