@@ -220,7 +220,8 @@ git config commit.template .gitmessage
 
 1. Use conventional commit messages (see `.gitmessage` template)
 2. Create pull requests to main branch
-3. Automatic releases are created on merge
+3. Automatic releases are created when PR is merged
+4. **Important**: Releases only happen on PR merges, not direct pushes to main
 
 ## Contributing
 
