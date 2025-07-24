@@ -82,4 +82,4 @@ variable "log_group_kms_key_id" {
   description = "KMS Key ID for CloudWatch Log Group encryption. If not provided, AWS managed key will be used"
   type        = string
   default     = null
-} 
+}

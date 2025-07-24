@@ -55,4 +55,9 @@ terraform.rc
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db 
+Thumbs.db
+
+# Security scan outputs
+*.sarif
+tfsec.sarif
+checkov.sarif

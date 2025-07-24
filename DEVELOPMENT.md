@@ -6,16 +6,16 @@ This guide covers the development workflow, tools, and best practices for contri
 
 ### Required Tools
 
-- **Terraform**: Latest stable version (1.5.0+)
-- **Git**: For version control
-- **Python**: For pre-commit hooks (3.8+)
-- **Node.js**: For semantic release (18+)
+* **Terraform**: Latest stable version (1.5.0+)
+* **Git**: For version control
+* **Python**: For pre-commit hooks (3.8+)
+* **Node.js**: For semantic release (18+)
 
 ### Optional Tools
 
-- **tfsec**: Security scanning
-- **tflint**: Terraform linting
-- **checkov**: Additional security scanning
+* **tfsec**: Security scanning
+* **tflint**: Terraform linting
+* **checkov**: Additional security scanning
 
 ## Setup
 
@@ -56,10 +56,10 @@ git checkout -b feature/your-module-name
 
 Follow these guidelines:
 
-- **Use conventional commits**: See [SEMANTIC_VERSIONING.md](SEMANTIC_VERSIONING.md)
-- **Follow module structure**: See module standards below
-- **Write documentation**: Include README.md for each module
-- **Test locally**: Validate your Terraform code
+* **Use conventional commits**: See [SEMANTIC_VERSIONING.md](SEMANTIC_VERSIONING.md)
+* **Follow module structure**: See module standards below
+* **Write documentation**: Include README.md for each module
+* **Test locally**: Validate your Terraform code
 
 ### 3. Pre-commit Checks
 
@@ -133,26 +133,26 @@ modules/your-module/
 ### Module Standards
 
 1. **Naming Convention**
-   - Use kebab-case for module names
-   - Use descriptive, clear names
-   - Include cloud provider prefix (aws-, azure-, gcp-)
+   * Use kebab-case for module names
+   * Use descriptive, clear names
+   * Include cloud provider prefix (aws-, azure-, gcp-)
 
 2. **Documentation**
-   - Comprehensive README.md
-   - Usage examples
-   - Input/output documentation
-   - Security considerations
+   * Comprehensive README.md
+   * Usage examples
+   * Input/output documentation
+   * Security considerations
 
 3. **Code Quality**
-   - Consistent formatting
-   - Proper variable validation
-   - Security best practices
-   - Resource tagging
+   * Consistent formatting
+   * Proper variable validation
+   * Security best practices
+   * Resource tagging
 
 4. **Testing**
-   - Local validation
-   - Security scanning
-   - Documentation generation
+   * Local validation
+   * Security scanning
+   * Documentation generation
 
 ### Example Module
 
@@ -235,9 +235,9 @@ tflint
 
 ### Security Configuration
 
-- `.tfsec.yml`: tfsec configuration
-- `SECURITY.md`: Security documentation
-- GitHub Actions: Automated security scanning
+* `.tfsec.yml`: tfsec configuration
+* `SECURITY.md`: Security documentation
+* GitHub Actions: Automated security scanning
 
 ## Testing
 
@@ -258,9 +258,9 @@ terraform plan
 
 ### Automated Testing
 
-- **GitHub Actions**: Runs on every PR
-- **Pre-commit**: Runs before each commit
-- **Security Scanning**: Automated vulnerability detection
+* **GitHub Actions**: Runs on every PR
+* **Pre-commit**: Runs before each commit
+* **Security Scanning**: Automated vulnerability detection
 
 ## Documentation
 
@@ -273,19 +273,19 @@ terraform plan
 
 ### Documentation Standards
 
-- Use clear, concise language
-- Include code examples
-- Document all variables and outputs
-- Explain security implications
-- Provide migration guides for breaking changes
+* Use clear, concise language
+* Include code examples
+* Document all variables and outputs
+* Explain security implications
+* Provide migration guides for breaking changes
 
 ## Release Process
 
 ### Semantic Versioning
 
-- **Major**: Breaking changes
-- **Minor**: New features
-- **Patch**: Bug fixes
+* **Major**: Breaking changes
+* **Minor**: New features
+* **Patch**: Bug fixes
 
 ### Release Workflow
 
@@ -306,57 +306,57 @@ npm run semantic-release
 
 ### Code Quality
 
-- Use consistent naming conventions
-- Follow Terraform best practices
-- Implement proper error handling
-- Use meaningful variable names
-- Add comprehensive documentation
+* Use consistent naming conventions
+* Follow Terraform best practices
+* Implement proper error handling
+* Use meaningful variable names
+* Add comprehensive documentation
 
 ### Security
 
-- Follow security best practices
-- Use least privilege principles
-- Implement proper encryption
-- Validate all inputs
-- Regular security scanning
+* Follow security best practices
+* Use least privilege principles
+* Implement proper encryption
+* Validate all inputs
+* Regular security scanning
 
 ### Performance
 
-- Use data sources efficiently
-- Minimize resource dependencies
-- Optimize for parallel execution
-- Use appropriate resource types
+* Use data sources efficiently
+* Minimize resource dependencies
+* Optimize for parallel execution
+* Use appropriate resource types
 
 ## Troubleshooting
 
 ### Common Issues
 
 1. **Pre-commit Fails**
-   - Check error messages
-   - Fix formatting issues
-   - Update dependencies
+   * Check error messages
+   * Fix formatting issues
+   * Update dependencies
 
 2. **Terraform Validation Errors**
-   - Check syntax
-   - Validate variable types
-   - Ensure provider versions
+   * Check syntax
+   * Validate variable types
+   * Ensure provider versions
 
 3. **Security Scan Failures**
-   - Review security issues
-   - Implement fixes
-   - Add exclusions if false positive
+   * Review security issues
+   * Implement fixes
+   * Add exclusions if false positive
 
 ### Getting Help
 
-- Check existing documentation
-- Review GitHub Issues
-- Ask in discussions
-- Follow security guidelines
+* Check existing documentation
+* Review GitHub Issues
+* Ask in discussions
+* Follow security guidelines
 
 ## Resources
 
-- [Terraform Documentation](https://www.terraform.io/docs)
-- [Terraform Best Practices](https://www.terraform.io/docs/cloud/guides/recommended-practices/index.html)
-- [tfsec Documentation](https://aquasecurity.github.io/tfsec/)
-- [Pre-commit Documentation](https://pre-commit.com/)
-- [Conventional Commits](https://www.conventionalcommits.org/) 
+* [Terraform Documentation](https://www.terraform.io/docs)
+* [Terraform Best Practices](https://www.terraform.io/docs/cloud/guides/recommended-practices/index.html)
+* [tfsec Documentation](https://aquasecurity.github.io/tfsec/)
+* [Pre-commit Documentation](https://pre-commit.com/)
+* [Conventional Commits](https://www.conventionalcommits.org/)

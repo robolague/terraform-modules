@@ -10,70 +10,71 @@ We use [tfsec](https://github.com/aquasecurity/tfsec) for automated security sca
 
 #### What tfsec Checks
 
-- **AWS Security**: IAM policies, S3 bucket security, encryption settings
-- **Azure Security**: Storage account security, network security groups
-- **GCP Security**: IAM roles, storage bucket permissions
-- **General Security**: Resource access controls, network security
+* **AWS Security**: IAM policies, S3 bucket security, encryption settings
+* **Azure Security**: Storage account security, network security groups
+* **GCP Security**: IAM roles, storage bucket permissions
+* **General Security**: Resource access controls, network security
 
 #### Common Security Issues
 
 1. **Encryption Issues**
-   - Unencrypted storage buckets
-   - Missing encryption at rest
-   - Insecure transport protocols
+   * Unencrypted storage buckets
+   * Missing encryption at rest
+   * Insecure transport protocols
 
 2. **Access Control Issues**
-   - Overly permissive IAM policies
-   - Public resource access
-   - Missing authentication
+   * Overly permissive IAM policies
+   * Public resource access
+   * Missing authentication
 
 3. **Network Security Issues**
-   - Open security groups
-   - Insecure network configurations
-   - Missing firewall rules
+   * Open security groups
+   * Insecure network configurations
+   * Missing firewall rules
 
 ### Automated Scanning
 
 Security scanning runs automatically on:
 
-- **Pull Requests**: Every PR is scanned for security issues
-- **Main Branch**: All pushes to main are scanned
-- **Release Process**: Security checks before releases
+* **Pull Requests**: Every PR is scanned for security issues
+* **Main Branch**: All pushes to main are scanned
+* **Release Process**: Security checks before releases
 
 ### Configuration
 
 Security scanning is configured via:
 
-- `.tfsec.yml`: Custom rules and exclusions
-- GitHub Actions: Automated scanning workflows
-- SARIF Output: Results integrated with GitHub Security tab
+* `.tfsec.yml`: Custom rules and exclusions
+* GitHub Actions: Automated scanning workflows
+* SARIF Output: Results integrated with GitHub Security tab
 
 ## Security Best Practices
 
 ### Module Development
 
 1. **Follow Security Standards**
-   - Use least privilege principles
-   - Implement proper encryption
-   - Configure secure defaults
+   * Use least privilege principles
+   * Implement proper encryption
+   * Configure secure defaults
 
 2. **Document Security Considerations**
-   - Include security notes in README
-   - Document required permissions
-   - Explain security trade-offs
+   * Include security notes in README
+   * Document required permissions
+   * Explain security trade-offs
 
 3. **Test Security Configurations**
-   - Validate security group rules
-   - Test IAM policy permissions
-   - Verify encryption settings
+   * Validate security group rules
+   * Test IAM policy permissions
+   * Verify encryption settings
 
 ### Common Security Patterns
 
 #### AWS Security Groups
+
 ```hcl
 resource "aws_security_group" "example" {
   name_prefix = "example-"
-  
+
   # Explicitly deny all traffic by default
   egress {
     from_port   = 0
@@ -81,7 +82,7 @@ resource "aws_security_group" "example" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   # Only allow specific traffic
   ingress {
     from_port   = 443
@@ -93,6 +94,7 @@ resource "aws_security_group" "example" {
 ```
 
 #### S3 Bucket Security
+
 ```hcl
 resource "aws_s3_bucket" "example" {
   bucket = "example-bucket"
@@ -158,14 +160,14 @@ If you discover a security vulnerability:
 
 This repository aims to comply with:
 
-- **AWS Well-Architected Framework**
-- **Azure Security Center recommendations**
-- **GCP Security Command Center**
-- **Industry security standards**
+* **AWS Well-Architected Framework**
+* **Azure Security Center recommendations**
+* **GCP Security Command Center**
+* **Industry security standards**
 
 ## Resources
 
-- [tfsec Documentation](https://aquasecurity.github.io/tfsec/)
-- [Terraform Security Best Practices](https://www.terraform.io/docs/cloud/guides/recommended-practices/security.html)
-- [AWS Security Best Practices](https://aws.amazon.com/architecture/security-identity-compliance/)
-- [Azure Security Documentation](https://docs.microsoft.com/en-us/azure/security/) 
+* [tfsec Documentation](https://aquasecurity.github.io/tfsec/)
+* [Terraform Security Best Practices](https://www.terraform.io/docs/cloud/guides/recommended-practices/security.html)
+* [AWS Security Best Practices](https://aws.amazon.com/architecture/security-identity-compliance/)
+* [Azure Security Documentation](https://docs.microsoft.com/en-us/azure/security/)

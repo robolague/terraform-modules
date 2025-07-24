@@ -10,7 +10,7 @@ echo "🚀 Setting up pre-commit hooks..."
 # Check if pre-commit is installed
 if ! command -v pre-commit &> /dev/null; then
     echo "📦 Installing pre-commit..."
-    
+
     # Try different installation methods
     if command -v pip &> /dev/null; then
         pip install pre-commit
@@ -112,4 +112,4 @@ echo "💡 Usage:"
 echo "   - Hooks run automatically on commit"
 echo "   - Run manually: pre-commit run"
 echo "   - Run on specific file: pre-commit run --files file.tf"
-echo "   - Skip hooks: git commit --no-verify" 
+echo "   - Skip hooks: git commit --no-verify"

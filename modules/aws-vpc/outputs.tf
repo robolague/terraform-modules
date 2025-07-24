@@ -56,4 +56,4 @@ output "kms_key_arn" {
 output "kms_key_id" {
   description = "The ID of the KMS key used for CloudWatch Log Group encryption"
   value       = var.enable_flow_logs && var.enable_log_group_encryption && var.log_group_kms_key_id == null ? aws_kms_key.log_group[0].key_id : null
-} 
+}

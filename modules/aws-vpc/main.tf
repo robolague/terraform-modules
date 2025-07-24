@@ -134,10 +134,10 @@ resource "aws_flow_log" "vpc" {
 
   log_destination_type = var.flow_log_destination_type
   log_destination      = aws_cloudwatch_log_group.vpc_flow_logs[0].arn
-  iam_role_arn        = aws_iam_role.vpc_flow_logs[0].arn
-  traffic_type        = var.flow_log_traffic_type
+  iam_role_arn         = aws_iam_role.vpc_flow_logs[0].arn
+  traffic_type         = var.flow_log_traffic_type
 
   tags = merge(var.tags, {
     Name = "${var.name}-flow-logs"
   })
-} 
+}

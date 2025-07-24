@@ -49,7 +49,7 @@
 ```hcl
 module "example" {
   source = "github.com/robolague/terraform-modules//modules/{{.Name}}"
-  
+
   # Add your variables here
 }
 ```
@@ -62,10 +62,10 @@ See the [examples](./examples/) directory for complete usage examples.
 
 This module follows security best practices:
 
-- All resources are properly tagged
-- Security groups follow least privilege principles
-- Encryption is enabled by default where applicable
-- IAM policies follow the principle of least privilege
+* All resources are properly tagged
+* Security groups follow least privilege principles
+* Encryption is enabled by default where applicable
+* IAM policies follow the principle of least privilege
 
 ## Contributing
 
@@ -73,4 +73,4 @@ Please read our [Contributing Guide](../../DEVELOPMENT.md) for details on our co
 
 ## License
 
-This module is licensed under the MIT License. See the [LICENSE](../../LICENSE) file for details. 
+This module is licensed under the MIT License. See the [LICENSE](../../LICENSE) file for details.

@@ -27,12 +27,12 @@ terraform-modules/
 
 Each module includes:
 
-- `main.tf` - Main module configuration
-- `variables.tf` - Input variables with validation
-- `outputs.tf` - Output values
-- `README.md` - Auto-generated documentation
-- `examples/` - Usage examples
-- `versions.tf` - Terraform and provider version constraints
+* `main.tf` - Main module configuration
+* `variables.tf` - Input variables with validation
+* `outputs.tf` - Output values
+* `README.md` - Auto-generated documentation
+* `examples/` - Usage examples
+* `versions.tf` - Terraform and provider version constraints
 
 ### Adding New Modules
 
@@ -55,10 +55,10 @@ This repository uses semantic versioning for releases. To use a module from this
 ```hcl
 module "vpc" {
   source = "github.com/robolague/terraform-modules//modules/aws-vpc?ref=v1.0.0"
-  
+
   name       = "my-vpc"
   cidr_block = "10.0.0.0/16"
-  
+
   tags = {
     Environment = "production"
     Project     = "my-project"
@@ -71,7 +71,7 @@ module "vpc" {
 ```hcl
 module "vpc" {
   source = "github.com/robolague/terraform-modules//modules/aws-vpc?ref=main"
-  
+
   name       = "my-vpc"
   cidr_block = "10.0.0.0/16"
 }
@@ -97,35 +97,37 @@ This repository uses automated semantic versioning:
 
 ### Module Standards
 
-- ✅ **Semantic Versioning**: Automatic releases based on commit messages
-- ✅ **Auto-Documentation**: README files generated automatically
-- ✅ **Security Scanning**: tfsec and Checkov integration
-- ✅ **Code Quality**: Pre-commit hooks for formatting and validation
-- ✅ **Examples**: Comprehensive usage examples
-- ✅ **Validation**: Input validation and error handling
-- ✅ **Testing**: Automated testing on every PR
+* ✅ **Semantic Versioning**: Automatic releases based on commit messages
+* ✅ **Auto-Documentation**: README files generated automatically
+* ✅ **Security Scanning**: tfsec and Checkov integration
+* ✅ **Code Quality**: Pre-commit hooks for formatting and validation
+* ✅ **Examples**: Comprehensive usage examples
+* ✅ **Validation**: Input validation and error handling
+* ✅ **Testing**: Automated testing on every PR
 
 ### Security Scanning
 
 This repository uses tfsec for automated security scanning:
 
-- **Automated Checks**: Runs on every PR and push to main
-- **Security Issues**: Identifies potential security vulnerabilities
-- **Compliance**: Ensures AWS/Azure/GCP security best practices
-- **Configuration**: Customizable via `.tfsec.yml`
+* **Automated Checks**: Runs on every PR and push to main
+* **Security Issues**: Identifies potential security vulnerabilities
+* **Compliance**: Ensures AWS/Azure/GCP security best practices
+* **Configuration**: Customizable via `.tfsec.yml`
 
 Common security checks include:
-- Encryption at rest and in transit
-- IAM permissions and policies
-- Network security groups and firewalls
-- Resource access controls
-- Compliance with security standards
+
+* Encryption at rest and in transit
+* IAM permissions and policies
+* Network security groups and firewalls
+* Resource access controls
+* Compliance with security standards
 
 ### Pre-commit Hooks
 
 Local development is enhanced with pre-commit hooks that run before each commit:
 
 #### Setup
+
 ```bash
 # Run the setup script
 ./scripts/setup-pre-commit.sh
@@ -136,14 +138,16 @@ pre-commit install
 ```
 
 #### Available Hooks
-- **Terraform Formatting**: `terraform fmt` on all `.tf` files
-- **Terraform Validation**: Syntax and configuration validation
-- **Documentation Generation**: Auto-generate module documentation
-- **Security Scanning**: tfsec and Checkov security checks
-- **Code Quality**: General linting and formatting
-- **Markdown Linting**: Documentation formatting
+
+* **Terraform Formatting**: `terraform fmt` on all `.tf` files
+* **Terraform Validation**: Syntax and configuration validation
+* **Documentation Generation**: Auto-generate module documentation
+* **Security Scanning**: tfsec and Checkov security checks
+* **Code Quality**: General linting and formatting
+* **Markdown Linting**: Documentation formatting
 
 #### Usage
+
 ```bash
 # Run all hooks on staged files (automatic on commit)
 pre-commit run
@@ -185,9 +189,11 @@ docs: update README with examples
 1. **Fork** the repository
 2. **Clone** your fork locally
 3. **Setup** development environment:
+
    ```bash
    ./scripts/setup-pre-commit.sh
    ```
+
 4. **Create** a feature branch
 5. **Make changes** using conventional commits
 6. **Test** thoroughly (hooks run automatically)
@@ -197,11 +203,11 @@ docs: update README with examples
 
 This repository includes several automated features:
 
-- 🔄 **Auto-Documentation**: README files generated from code
-- 🛡️ **Security Scanning**: tfsec and Checkov on every commit
-- 📝 **Code Formatting**: Terraform and Markdown formatting
-- 🏷️ **Semantic Releases**: Automatic versioning and releases
-- ✅ **Quality Checks**: Pre-commit hooks for consistency
+* 🔄 **Auto-Documentation**: README files generated from code
+* 🛡️ **Security Scanning**: tfsec and Checkov on every commit
+* 📝 **Code Formatting**: Terraform and Markdown formatting
+* 🏷️ **Semantic Releases**: Automatic versioning and releases
+* ✅ **Quality Checks**: Pre-commit hooks for consistency
 
 ### Development Workflow
 
@@ -209,4 +215,4 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed development guidelines.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

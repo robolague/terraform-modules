@@ -21,4 +21,4 @@ module "vpc" {
     Environment = "example"
     Project     = "terraform-modules"
   }
-} 
+}

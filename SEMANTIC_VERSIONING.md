@@ -18,17 +18,17 @@ All commits should follow the conventional commit format:
 
 ### Commit Types
 
-- **feat**: New features (triggers minor version bump)
-- **fix**: Bug fixes (triggers patch version bump)
-- **docs**: Documentation changes (no version bump)
-- **style**: Code style changes (no version bump)
-- **refactor**: Code refactoring (no version bump)
-- **test**: Adding or updating tests (no version bump)
-- **chore**: Maintenance tasks (no version bump)
-- **perf**: Performance improvements (triggers patch version bump)
-- **ci**: CI/CD changes (no version bump)
-- **build**: Build system changes (no version bump)
-- **revert**: Reverting previous commits (no version bump)
+* **feat**: New features (triggers minor version bump)
+* **fix**: Bug fixes (triggers patch version bump)
+* **docs**: Documentation changes (no version bump)
+* **style**: Code style changes (no version bump)
+* **refactor**: Code refactoring (no version bump)
+* **test**: Adding or updating tests (no version bump)
+* **chore**: Maintenance tasks (no version bump)
+* **perf**: Performance improvements (triggers patch version bump)
+* **ci**: CI/CD changes (no version bump)
+* **build**: Build system changes (no version bump)
+* **revert**: Reverting previous commits (no version bump)
 
 ### Breaking Changes
 
@@ -49,16 +49,19 @@ BREAKING CHANGE: The default CIDR block has changed from 10.0.0.0/16 to 172.16.0
 ## Examples
 
 ### Feature Addition
+
 ```
 feat(aws-ec2): add support for custom AMI selection
 ```
 
 ### Bug Fix
+
 ```
 fix(azure-storage): resolve storage account naming conflict
 ```
 
 ### Breaking Change
+
 ```
 feat(aws-vpc)!: change default subnet configuration
 
@@ -66,15 +69,16 @@ BREAKING CHANGE: Default subnet CIDR blocks have been updated
 ```
 
 ### Documentation Update
+
 ```
 docs: update module usage examples
 ```
 
 ## Version Bumping Rules
 
-- **MAJOR** (1.0.0): Breaking changes
-- **MINOR** (1.1.0): New features (backward compatible)
-- **PATCH** (1.1.1): Bug fixes (backward compatible)
+* **MAJOR** (1.0.0): Breaking changes
+* **MINOR** (1.1.0): New features (backward compatible)
+* **PATCH** (1.1.1): Bug fixes (backward compatible)
 
 ## Workflow
 
@@ -86,10 +90,10 @@ docs: update module usage examples
 
 ## Configuration Files
 
-- `.releaserc`: Semantic release configuration
-- `package.json`: Node.js package with release settings
-- `.gitmessage`: Git commit message template
-- `.github/workflows/semantic-release.yml`: GitHub Actions workflow
+* `.releaserc`: Semantic release configuration
+* `package.json`: Node.js package with release settings
+* `.gitmessage`: Git commit message template
+* `.github/workflows/semantic-release.yml`: GitHub Actions workflow
 
 ## Setting Up Git Template
 
@@ -141,4 +145,4 @@ fix(azure-storage): resolve naming issue
 docs(aws-ec2): update instance type documentation
 ```
 
-This helps track which modules are affected by changes. 
+This helps track which modules are affected by changes.

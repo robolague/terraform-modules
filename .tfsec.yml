@@ -35,10 +35,10 @@ workspace_settings:
 output_settings:
   # Output format (json, sarif, text, csv)
   format: "sarif"
-  
+
   # Include passed checks in output
   include_passed: false
-  
+
   # Include ignored checks in output
   include_ignored: false
 
@@ -46,7 +46,7 @@ output_settings:
 severity_levels:
   # Minimum severity to report
   minimum_severity: "LOW"
-  
+
   # Severity mapping
   severity_mapping:
     CRITICAL: "ERROR"
@@ -58,6 +58,6 @@ severity_levels:
 timeout_settings:
   # Maximum time to wait for tfsec to complete
   timeout: "300s"
-  
+
   # Timeout for individual checks
-  check_timeout: "30s" 
+  check_timeout: "30s"

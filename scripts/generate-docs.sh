@@ -34,7 +34,7 @@ fi
 for module in $modules; do
     if [ -f "$module/main.tf" ] || [ -f "$module/variables.tf" ]; then
         echo "📝 Generating documentation for: $module"
-        
+
         # Generate README.md
         terraform-docs markdown \
             --sort-by=required \
@@ -42,7 +42,7 @@ for module in $modules; do
             --output-mode=replace \
             --hide-empty \
             "$module"
-        
+
         echo "✅ Generated README.md for $module"
     fi
 done
@@ -56,7 +56,7 @@ if [ -f "main.tf" ] || [ -f "variables.tf" ]; then
         --output-mode=replace \
         --hide-empty \
         .
-    
+
     echo "✅ Generated main README.md"
 fi
 
@@ -67,4 +67,4 @@ echo "$modules" | while read -r module; do
     if [ -f "$module/README.md" ]; then
         echo "   - $module/README.md"
     fi
-done 
+done
